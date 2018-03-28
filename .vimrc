@@ -7,51 +7,9 @@ set ruler
 set cursorline
 set incsearch
 set hlsearch
-" status line 
-function! GitBranch()
-	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
+" keymap
+map <C-w> <C-w>w
 
-function! StatuslineGit()
-	let l:branchname = GitBranch()
-	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-function! Buf_total_num()
-	return len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-endfunction
-function! File_size(f)
-	let l:size = getfsize(expand(a:f))
-	if l:size == 0 || l:size == -1 || l:size == -2
-		return ''
-	endif
-	if l:size < 1024
-		return l:size.' bytes'
-	elseif l:size < 1024*1024
-		return printf('%.1f', l:size/1024.0).'k'
-	elseif l:size < 1024*1024*1024
-		return printf('%.1f', l:size/1024.0/1024.0) . 'm'
-	else
-		return printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
-	endif
-endfunction
-set statusline=%<%1*[B-%n]%*
-" TOT is an abbreviation for total
- set statusline+=%2*%{StatuslineGit()}*
- set statusline+=%3*\ %{File_size(@%)}\ %*
- set statusline+=%4*\ %F\ %*
- set statusline+=%5*『\ %{exists('g:loaded_ale')?ALEGetStatusLine():''}』%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*
- set statusline+=%6*\ %m%r%y\ %*
- set statusline+=%=%7*\ %{&ff}\ \|\ %{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\ \|\"}\ %-14.(%l:%c%V%)%*
- set statusline+=%8*\ %P\ %*
- " default bg for statusline is 236 in space-vim-dark
- hi User1 cterm=bold ctermfg=23 ctermbg=79
- hi User2 cterm=None ctermfg=21 ctermbg=42
- hi User3 cterm=None ctermfg=25 ctermbg=40
- hi User4 cterm=bold ctermfg=16 ctermbg=39
- hi User5 cterm=None ctermfg=20 ctermbg=38
- hi User6 cterm=None ctermfg=24 ctermbg=37
- hi User7 cterm=None ctermfg=25 ctermbg=38
- hi User8 cterm=None ctermfg=24 ctermbg=40
 " ------vundle config start------
 " 设置包括vundle和初始化相关的runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -65,6 +23,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
+
 " 来自 http://vim-scripts.org/vim/scripts.html 的插件
 " Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
 " Plugin 'L9'
