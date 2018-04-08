@@ -9,6 +9,8 @@ set incsearch
 set hlsearch
 " keymap
 map <C-w> <C-w>w
+let mapleader=","
+nmap <leader>tt :Tagbar<CR>
 
 " ------vundle config start------
 " 设置包括vundle和初始化相关的runtime path
