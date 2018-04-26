@@ -28,6 +28,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'majutsushi/tagbar'
+Plugin 'jiangmiao/auto-pairs'
 
 " 来自 http://vim-scripts.org/vim/scripts.html 的插件
 " Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
@@ -91,4 +92,3 @@ call NERDTreeHighlightFile('log', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('py', 'Red', 'none', 'red', '#151515')
    
  " ------nerdtree config end------
- "
