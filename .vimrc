@@ -7,6 +7,12 @@ set ruler
 set cursorline
 set incsearch
 set hlsearch
+set autoindent
+set shiftwidth=4
+set expandtab
+set tabstop=4
+set clipboard=unnamed
+
 " keymap
 map <C-w> <C-w>w
 let mapleader=","
