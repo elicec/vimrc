@@ -100,3 +100,4 @@ call NERDTreeHighlightFile('py', 'Red', 'none', 'red', '#151515')
  " ------nerdtree config end------
  "  support mouse
  set mouse=a
+ set ignorecase
