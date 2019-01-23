@@ -98,3 +98,5 @@ call NERDTreeHighlightFile('log', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('py', 'Red', 'none', 'red', '#151515')
    
  " ------nerdtree config end------
+ "  support mouse
+ set mouse=a
