@@ -80,6 +80,8 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 	exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='.  a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
 	exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'.  a:extension .'$#'
 endfunction
+"for mac ^G int nerdtree
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
